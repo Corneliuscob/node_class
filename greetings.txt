@@ -1,0 +1,1 @@
+Hello ${user.username}!Hello ${user.username}!Hello ${user.username}! you are  ${notes.age}. Hello ${user.username}! you are  ${notes.age}. Hello ${user.username}! you are  ${notes.age}. Hello toto! you are  22. 
