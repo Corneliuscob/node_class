@@ -1,7 +1,6 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,17 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.5",
+    "request": "^2.73.0",
     "yargs": "^4.7.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corneliuscob/node_class.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Corneliuscob/node_class/issues"
+  },
+  "homepage": "https://github.com/Corneliuscob/node_class#readme",
+  "description": ""
 }
