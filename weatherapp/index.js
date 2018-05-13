@@ -1,6 +1,6 @@
-const request = require('request');
-const yargs = require('yargs');
 
+const yargs = require('yargs');
+const geocode = require('./geocode/geocode');
 const argv = yargs
     .options({
         a: {
@@ -14,21 +14,8 @@ const argv = yargs
     .alias()
     .argv;
 console.log(argv.address);
-var domain= 'https://maps.googleapis.com/maps/api/geocode/json?address=%20'
-var query  = encodeURIComponent(argv.address);
-var location_query = domain+query;
 
-
-request({
-            url: location_query,
-            json: true
-            // url = `https://maps.googleapis.com/maps/api/geocode/json?address=%20${query}` // also works with template strings 
-        },
-        (error,response, body)=>{
-            //remember, strigify turns json into object
-            console.log(`Address: ${body.results[0].formatted_address}`);
-            console.log(`Latitude: ${body.results[0].geometry.location.lat}`);
-            console.log(`Longitude: ${body.results[0].geometry.location.lng}`);
-            // console.log(JSON.stringify(body,undefined,2));
-            // console.log(body);
-        });
+geocode.geocodeAddress(argv.address,(err,res)=>{
+    if(err) console.log(err);
+    else console.log(JSON.stringify(res,undefined,2));
+});    
