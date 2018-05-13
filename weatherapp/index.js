@@ -1,8 +1,28 @@
 const request = require('request');
+const yargs = require('yargs');
+
+const argv = yargs
+    .options({
+        a: {
+            demand: true,
+            alias: 'address',
+            describe: 'Address to fetch weather app',
+            string: true
+        }
+    })  
+    .help()
+    .alias()
+    .argv;
+console.log(argv.address);
+var domain= 'https://maps.googleapis.com/maps/api/geocode/json?address=%20'
+var query  = encodeURIComponent(argv.address);
+var location_query = domain+query;
+
 
 request({
-            url: 'https://maps.googleapis.com/maps/api/geocode/json?address=%203382%20cambie%20street%20vancouver&key=AIzaSyCk6RqzXbB_GG9gQEFKNNO6uYWnau12WL4',
+            url: location_query,
             json: true
+            // url = `https://maps.googleapis.com/maps/api/geocode/json?address=%20${query}` // also works with template strings 
         },
         (error,response, body)=>{
             //remember, strigify turns json into object
