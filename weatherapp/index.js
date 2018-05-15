@@ -22,9 +22,9 @@ geocode.geocodeAddress(argv.address,(err,res)=>{
     }
     else {
         console.log(res.Address);
-        weather.getWeather(res.Latitude,res.Longitude,(err,wres)=>{
+        weather.getWeather(res.Latitude,res.Longitude,(err,res)=>{
             if(err) console.log(err);
-            else console.log(`It's currently ${wres.temperature}. It feels like ${wres.apparentTemperature}`);
+            else console.log(`It's currently ${res.temperature}. It feels like ${res.apparentTemperature}`);
         });
     }
 });    
