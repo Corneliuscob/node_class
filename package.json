@@ -8,6 +8,7 @@
   "author": "toto",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.13.1",
     "lodash": "^4.17.5",
     "request": "^2.73.0",
     "yargs": "^4.7.1"

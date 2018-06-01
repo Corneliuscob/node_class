@@ -12,7 +12,7 @@ const argv = yargs
         }
     })  
     .help()
-    .alias()
+    .alias('help','h')
     .argv;
 console.log(argv.address);
 
