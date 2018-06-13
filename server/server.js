@@ -71,6 +71,9 @@ app.get('/help',(req,res)=>{
                             pageTitle: 'Help Page',
                             });
 });
+app.get('/projects',{ objectproperty : 'some properties to inject into the template',
+                    pageTitle: 'Projects',
+                    });
 
 app.get('/bad',(req,res)=>{
     res.send({
