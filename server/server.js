@@ -4,11 +4,9 @@ const fs = require('fs');
 
 var app = express();
 
+const port= process.env.PORT || 3000;
 
 
-app.listen(3000,()=>{
-    console.log("listening on port 3000");
-});
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine','hbs');
@@ -78,4 +76,12 @@ app.get('/bad',(req,res)=>{
     res.send({
         errorMessage: 'Unable to handle request'
     });
+});
+// app.listen(3000,()=>{
+//     console.log("listening on port 3000");
+// });
+
+//heroku will set us  a port to listen on 
+app.listen(port,()=>{
+        console.log(`listening on port ${port}`);
 });
